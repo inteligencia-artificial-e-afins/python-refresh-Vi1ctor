@@ -1,7 +1,19 @@
 # Exercicio 01
-def max_consecutive_sum(nums):
-    # implementar a solução aqui
-    pass
+def max_consecutive_sum(lista):
+    max_sum = lista[0]
+    current_sum = lista[0]
+
+    for i in range(1, len(lista)):
+        current_sum += lista[i]
+
+
+        if lista[i] > current_sum:
+          current_sum = lista[i]
+
+        if current_sum > max_sum:
+            max_sum = current_sum
+
+return max_sum
 
 # Testes 01
 def test_max_consecutive_sum():
@@ -13,9 +25,13 @@ def test_max_consecutive_sum():
 
 
 # Exercício 02
-def is_palindrome(word):
-    # implementar a solução aqui
-    pass
+def is_palindrome(string):
+    string = string.replace(" ", "").lower()
+
+    if string == string[::-1]:
+        return True
+    else:
+        return False
 
 # Testes 02
 def text_is_palindrome():
